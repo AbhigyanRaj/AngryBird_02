@@ -1,58 +1,77 @@
-<<<<<<< HEAD
-# AngryBirds
+# Angry Birds Game in Java
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+This **Angry Birds** project is a **libGDX-based game** inspired by the classic Angry Birds gameplay. The project provides a modular structure for developing and testing various game states like menus, levels, and pause screens. Below is a detailed overview of the functionality and setup:
 
+---
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+## Description
+- **Core Functionality**: 
+  - Launches the application via the `Core` class, which initializes the game states.
+  - The game progresses through multiple states:
+    1. **OpeningState**: The initial loading screen.
+    2. **MenuState**: Contains the play button leading to the `LevelSelectState`.
+    3. **LevelSelectState**: Currently has 3 buttons, all pointing to a static play screen. Includes a back button to return to the `MenuState`.
+    4. **PlayState**: Features dummy buttons for `LevelCompleted` and `LevelFailed` screens.
+    5. **LevelCompleted & LevelFailed**:
+       - Resume or retry options to return to the `PlayState`.
+       - Home button to navigate back to the `MenuState`.
+    6. **PauseState**: Includes options to resume, save and exit, or quit to the `MenuState`.
 
-## SetUp, Running and Testing AngryBirds
- - The central class that is Core is the class that starts the entire project
- - The Core classes calls the openingState class which in turns calls the menuState class
- - The menuState for this deadline has only a play option which when pressed switches the screen to levelSelect State
- - The levelSelectstate has 3 level buttons initially but since the levels haven't been implemented yet, the three levelSelect buttons changes to the same static playscreen
- - There is a back option on the top left corner of levelSelectState which when pressed changes the screen to menuState.
- - In the playstate, there are 2 dummy buttons for levelCompleted and levelFailed screens which when pressed changes to those screens
- - the levelCompleted screens has a resume button which when pressed changes to the same playscreen and the rest buttons changes to menuState
- - the levelFailed screens has tryAgain which chnages to same playState screen and home button to the menuState screen
-- The puase button  on the playstate screen pauses the game creen and changes to the pauseState 
-- The pauseState has resume button, save and exit and exit button.
-- The first button changes to the same playState screen
-- and the Last 2 to the menuState button.
+- **Gameplay Features**:
+  - Pause and resume functionality.
+  - Transition between screens based on user actions.
+  - Edited game assets designed using **Figma**.
+  
+---
 
-## Resources used from the internet:
-- This project has taken help from the youtube video series of flappyBird by Brent Aureli Codes.
-- This project has also taken help from the original documentations available on libgdx.com on how to extend a simple game etc.
-- The assets are downloaded from spriters-resources.
-- And most of the assets ar edited on figma.
+## Resources Used
+- **Tutorials**:
+  - Brent Aureli's Flappy Bird series on YouTube.
+- **Documentation**:
+  - Official **libGDX** documentation for game design.
+- **Assets**:
+  - Sprites downloaded from [The Spriters Resource](https://www.spriters-resource.com) and modified in Figma.
 
+---
 
-## Platforms
+## Setup and Testing
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+### Running the Game
+- The `Core` module is the entry point for the game.
+- Use the following commands for development and testing:
 
-## Gradle
+#### Gradle Commands
+- **Build**: `./gradlew build`
+- **Run**: `./gradlew lwjgl3:run`
+- **Clean**: `./gradlew clean`
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+### Platform Modules
+- `core`: Contains the application logic shared across platforms.
+- `lwjgl3`: Desktop platform module using LWJGL3.
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+### Assets
+- Assets are stored in the `assets` folder, optimized for performance and edited for seamless integration.
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
-=======
+---
 
+## Features Overview
+
+### Game States
+- **Menu**: Play and navigate options.
+- **Level Selection**: Choose levels (currently static screens).
+- **Gameplay**: Core game mechanics, dummy success/fail screens, and pause functionality.
+
+### Gradle Integration
+- Fully integrated with **Gradle** for dependency management and builds.
+- Gradle wrapper included for platform-independent builds.
+
+---
+
+## Languages and Technologies Used
+- **Java**: 62.9%
+- **Ragel**: 21.4%
+- **GLSL**: 15.7%
+
+---
+
+**Made with ❤️ by Abhigyann**
